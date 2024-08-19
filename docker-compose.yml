@@ -3,7 +3,6 @@ services:
     restart: always
     image: whatwewant/cloudflared:${SERVICE_CLOUDFLARED_IMAGE_VERSION}
     environment:
-      PORT: $SERVICE_CLOUDFLARED_PORT
       TOKEN: ${SERVICE_CLOUDFLARED_TOKEN}
       
 networks:
