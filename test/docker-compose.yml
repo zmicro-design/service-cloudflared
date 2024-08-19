@@ -1,0 +1,13 @@
+services:
+  cloudflared:
+    restart: always
+    image: whatwewant/cloudflared:${SERVICE_CLOUDFLARED_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_CLOUDFLARED_PORT
+      USERNAME: ${SERVICE_CLOUDFLARED_TOKEN}
+      PASSWORD: ${SERVICE_CLOUDFLARED_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
